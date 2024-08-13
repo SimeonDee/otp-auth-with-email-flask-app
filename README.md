@@ -34,8 +34,6 @@ This project implements a simple authentication system with email-based OTP (One
 $ pip install -r requirements.txt
 `
 
----
-
 - Running the server locally
   
 `
