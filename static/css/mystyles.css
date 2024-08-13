@@ -1,0 +1,107 @@
+body{
+    min-height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+header{
+    position: sticky;
+    top: 0px;
+}
+
+/* body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  min-height: 50px;
+}
+
+footer {
+  min-height: 50px;
+}
+
+
+/* The article fills all the space between header & footer */
+
+/* body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+} */ */
+
+
+.form-title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-wrapper{
+    margin: auto;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.content{
+    padding: 20px 30px;
+    min-height: 500px;
+}
+
+
+.error{
+    color:red; 
+    border: 1px solid rgb(211, 134, 134); 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.otp-input{
+    padding: 10px 15px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.timer-display{
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(8, 4, 18);
+    color: whitesmoke;
+}
+
+footer{
+    padding: 20px;
+    text-align: center;
+    color: whitesmoke;
+    position:sticky;
+    bottom: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-wrapper {
+    width: 95%;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .content{
+    min-height: 500px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .content{
+    min-height: 700px;
+  }
+}

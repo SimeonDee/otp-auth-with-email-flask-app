@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}
+    OTP
+{% endblock title %}
+
+{% block content %}
+<div class="content container">
+    <h2>2-Factor OTP Authentication</h2>
+    
+    <div class="form-wrapper">
+
+        <h1 class="form-title">OTP Authentication</h1>
+        
+        <div class="mx-1 mx-md-4">
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <a href="/generate_otp?fetchotp=1">
+                    <button  type="button" id="get-otp-btn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Get OTP</button>
+                </a>
+            </div>
+
+            {% if response %}
+                {% if response.success == False %}
+                    <div id="error-div" class="error">
+                        {{response.message}}
+                    </div>
+                
+                {% else %}
+                    <div id="info-div" class="info">
+                        <p>{{response.message}}</p>
+                    </div>
+                    
+                    <div id="timer-display-div" class="timer-display"></div>
+
+                    <form action="{{url_for('verify_otp')}}" method="post">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                            <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="otp-input">Enter Received OTP Here</label>
+                                <input type="text" id="otp-input" name="otp-input" class="form-control otp-input" />
+                            </div>
+                        </div>
+    
+                        <div class="d-flex justify-content-right mx-4 mb-3 mb-lg-4">
+                            <button  type="submit" id="verify-otp-btn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Verify and Continue</button>
+                        </div>
+                    </form>
+
+                    {% if otp_duration %}
+                        <script>
+                            startTimer('{{otp_duration}}')
+                        </script>
+                    {% endif %}
+
+                {% endif %}
+            {% endif %}
+
+            {% if error_message %}
+                <div id="error-div" class="error">
+                    {{error_message}}
+                </div>
+            {% endif %}
+        </div>
+    </div> 
+</div>
+{% endblock content %}
+
+<!-- <div style="border: 1px solid gray; border-radius:10px; background-color: whitesmoke; color:rgb(3, 3, 24); padding: 5px; text-align:center">
+    <p>
+        Your OTP is {'-'.join(otp)}
+    </p>
+</div> -->

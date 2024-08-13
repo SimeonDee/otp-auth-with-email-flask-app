@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Authenticator - {% block title %} {% endblock title %}</title>
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyles.css')}}">
+    
+    <!-- Bootstrap Scripts -->
+    <script src="{{ url_for('static', filename='bootstrap/css/bootstrap.min.js')}}"> </script>
+
+</head>
+<body>
+    <div>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 10px 30px;">
+                <a class="navbar-brand" href="#">Email OTP Auth</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock content %}
+        
+        <footer class="bg-dark">
+            &copy; 2024
+        </footer>
+
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="{{ url_for('static', filename='css/myscripts.js')}}"> </script>
+</body>
+</html>
