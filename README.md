@@ -29,13 +29,15 @@ This project implements a simple authentication system with email-based OTP (One
 # Installations and Setup
 - Installing dependencies
 
-`shell
+
+`
 $ pip install -r requirements.txt
 `
 
 ---
 
 - Running the server locally
-`shell
+  
+`
 $ python ./app.py
 `
