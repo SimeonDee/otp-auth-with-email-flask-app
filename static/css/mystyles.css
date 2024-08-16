@@ -9,6 +9,44 @@ header{
     top: 0px;
 }
 
+.logo{
+  padding: 20px; 
+  text-align: center; 
+  align-content: space-around;
+}
+
+.logo img{
+  width: 25%;
+  height: 25%;
+}
+
+.welcome{
+  text-align: right;
+  font-size: medium;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.welcome span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logout{
+  margin-left: 20px;
+  color: rgb(255, 17, 17);
+  font-weight: 500;
+  /* text-decoration: none; */
+}
+
+.logout:hover{
+  padding: 5px;
+  border: 1px solid red;
+  color: red;
+  background-color: rgb(13, 7, 26);
+  border-radius: 5px;
+}
+
 /* body {
   min-height: 100vh;
   margin: 0;
